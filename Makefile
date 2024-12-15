@@ -2,25 +2,17 @@
 
 VERSION = 0.1
 
-# paths
-PREFIX    = /usr/local
+PREFIX = /usr/local
 MANPREFIX = $(PREFIX)/share/man
 DOCPREFIX = $(PREFIX)/share/doc
 
 SRC = bfc.c
 OBJ = $(SRC:.c=.o)
 
-# use system flags.
 BFC_CFLAGS = $(CFLAGS) -Wall -Werror -Wpedantic -std=c99
 BFC_LDFLAGS = $(LDFLAGS)
 
 all: bfc
-
-options:
-	@echo bfc build options:
-	@echo "CFLAGS   = $(CFLAGS)"
-	@echo "LDFLAGS  = $(LDFLAGS)"
-	@echo "CC       = $(CC)"
 
 .c.o:
 	$(CC) -c $< $(BFC_CFLAGS) $(BFC_CPPFLAGS)
@@ -43,8 +35,7 @@ uninstall: all
 
 dist: clean
 	mkdir -p bfc-$(VERSION)
-	cp -R Makefile README LICENSE \
-		bfc.c bfc.1 bfc-$(VERSION)
+	cp -R Makefile README LICENSE bfc.c bfc.1 bfc-$(VERSION)
 	tar -cf - bfc-$(VERSION) | gzip -c > bfc-$(VERSION).tar.gz
 	rm -rf bfc-$(VERSION)
 
