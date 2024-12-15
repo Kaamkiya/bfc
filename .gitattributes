@@ -107,3 +107,5 @@
 *.exe   binary
 *.out   binary
 *.app   binary
+
+*.b     text linguist-language=brainfuck
