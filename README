@@ -1,0 +1,37 @@
+bfc
+===
+
+A tiny brainf*ck to C transpiler. I found it easier to make this than an actual
+interpreter.
+
+usage
+-----
+First, clone the repo (or just download bfc.c, it's the only file you really
+need.)
+
+	$ git clone https://codeberg.org/Kaamkiya/bfc
+
+Then build it.
+
+	$ cd bfc
+	$ make
+
+Basic usage:
+
+	$ bfc [path/to/file.b]
+
+If you don't specify a file to read from, bfc will read from stdin, so you can
+also pipe to it:
+
+	$ cat hello_world.b | bfc
+
+It will write the transpiled code to stdout, or you can specify a file using
+redirection:
+
+	$ cat hello_world.b | bfc > hello.c
+
+Then you can compile your C file.
+
+license
+-------
+Unlicense. See https://unlicense.org for more.
