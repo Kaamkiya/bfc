@@ -15,30 +15,12 @@ int main(int argc, char *argv[]) {
 		}
 	}
 
-	char code[1048576];
 	char c;
-	unsigned int i = 0;
-	while ((c = fgetc(fp)) != EOF) {
-		if (c == '>' ||
-			c == '<' ||
-			c == '+' ||
-			c == '-' ||
-			c == '.' ||
-			c == ',' ||
-			c == '[' ||
-			c == ']') {
-			code[i] = c;
-			i++;
-		}
-	}
-	fclose(fp);
-
 	char program[1048576];
 	strcpy(program, "#include <stdio.h>\nint main(){char t[30000]={0};int p=0;");
-
-	for (i = 0; i < strlen(code); i++) {
+	while ((c = fgetc(fp)) != EOF) {
 		char *instruction = NULL;
-		switch (code[i]) {
+		switch (c) {
 		case '>': instruction = "p++;";            break;
 		case '<': instruction = "p--;";            break;
 		case '+': instruction = "t[p]++;";         break;
@@ -51,6 +33,7 @@ int main(int argc, char *argv[]) {
 		}
 		strcat(program, instruction);
 	}
+	fclose(fp);
 
 	strcat(program, "return 0;}");
 	puts(program);
