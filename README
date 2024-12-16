@@ -4,6 +4,8 @@ bfc
 A tiny brainf*ck to C transpiler. I found it easier to make this than an actual
 interpreter.
 
+You can read about it on my blog: http://kaki.envs.net/blog/the-tiny-transpiler
+
 usage
 -----
 First, clone the repo (or just download bfc.c, it's the only file you really
