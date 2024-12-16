@@ -24,16 +24,17 @@
 >
 .Op Ar output file
 
+.Nm
+.Op Ar file
+| gcc -x c -
+
 .Sh DESCRIPTION
 A tiny brainf*ck to C transpiler, written in C.
 
 When you don't specify a file name,
 .Nm
-reads from stdin.
-
-The source code for
-.Nm
-can be found at https://cod
+reads from stdin. This means you can write it to a C file, or you can compile
+directly from stdin.
 
 .Sh AUTHOR
 .Nm
