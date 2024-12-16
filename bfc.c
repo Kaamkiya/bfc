@@ -19,8 +19,17 @@ int main(int argc, char *argv[]) {
 	char c;
 	unsigned int i = 0;
 	while ((c = fgetc(fp)) != EOF) {
-		code[i] = c;
-		i++;
+		if (c == '>' ||
+			c == '<' ||
+			c == '+' ||
+			c == '-' ||
+			c == '.' ||
+			c == ',' ||
+			c == '[' ||
+			c == ']') {
+			code[i] = c;
+			i++;
+		}
 	}
 	fclose(fp);
 
