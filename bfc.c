@@ -3,11 +3,9 @@
 #include <string.h>
 
 int main(int argc, char *argv[]) {
-	FILE *fp;
+	FILE *fp = stdin;
 
-	if (argc < 2) {
-		fp = stdin;
-	} else {
+	if (argc >= 2) {
 		fp = fopen(argv[1], "r");
 		if (fp == NULL) {
 			fputs("Error: Cannot open file.", stderr);
