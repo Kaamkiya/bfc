@@ -1,10 +1,10 @@
 bfc
 ===
 
-A tiny brainf*ck to C transpiler. I found it easier to make this than an actual
+A tiny brainfuck to C transpiler. I found it easier to make this than an actual
 interpreter.
 
-You can read about it on my blog: http://kaki.envs.net/blog/the-tiny-transpiler
+You can read about it on my blog: https://kaamkiya.github.io/posts/tiny-transpiler
 
 usage
 -----
